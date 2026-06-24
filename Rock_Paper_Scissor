@@ -1,0 +1,30 @@
+import numpy as np
+
+l = ['stone','paper','scissor']
+chances = int(input("Enter your no of chances"))
+
+won = 0
+loss = 0
+
+
+for i in range(1,chances+1):
+  string = input("Enter your choice")
+  comp = np.random.choice(l)
+  print("the computer chose",comp)
+
+  if string == 'paper' and comp == 'scissor' or string == 'scissor' and comp == 'stone' or string == 'stone' and comp == 'paper':
+    loss += 1
+    print("You lose this round")
+
+  elif string == comp:
+    print("The round is a draw")
+
+  else:
+    won += 1
+    print("you win this round")
+    
+if won > loss:
+   print("Print you won the game")
+
+else:
+   print("You lose the game")  
